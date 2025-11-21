@@ -757,7 +757,7 @@
 }
 
 /* -------------------------About---------------------- */
-.about-hero {
+ .about-hero {
   h1 {
     text-align: center;
     text-transform: capitalize;
@@ -777,16 +777,33 @@
   left: 50%;
   top: 0;
   width: 2px;
-  height: 90%;
+  height: 30%;
   background: var(--light-gray);
   transform: translateX(-50%);
 }
 
+.timeline-progress {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 0%;
+  background: linear-gradient(to bottom, #FF5532, #ff6161);
+  transform: translateX(-40%);
+  transition: height 0.3s ease;
+  z-index: 1;
+}
+
 .timeline-item {
-  /* width: 100%; */
   display: flex;
   position: relative;
   margin: 50px 0;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.timeline-item.active {
+  opacity: 1;
 }
 
 .timeline-item.right {
@@ -809,6 +826,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
   font-size: 14px;
   line-height: 1.5;
+  transition: all 0.3s ease;
 }
 
 .text-left,
@@ -818,6 +836,17 @@
   width: 40%;
 }
 
+.timeline-item.active .content-box,
+.timeline-item.active .text-left,
+.timeline-item.active .text-right {
+  background: linear-gradient( #FFFFFF);
+ }
+
+.timeline-item.right.active .content-box,
+.timeline-item.right.active .text-right {
+  border-left: none;
+ }
+
 .dot {
   position: absolute;
   left: 50%;
@@ -826,6 +855,15 @@
   background: #FF5532;
   border-radius: 50%;
   transform: translate(-50%, 0);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.timeline-item.active .dot {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #FF5532, #FF8C42);
+  box-shadow: 0 0 0 4px rgba(255, 85, 50, 0.2);
 }
 
 /* -------------------collaba nd clearity--------------- */
