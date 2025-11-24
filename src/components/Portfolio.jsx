@@ -1,22 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../Style/style.css";
 
 function Portfolio() {
   return (
-    <div className="component">
-      <div className="ideas-card-wrapper">
-        <div className="idea-card">
-          <h3>Mudroots Pottery Studio</h3>
-          <p>
+    <div className="py-10">
+      <div className="grid grid-cols-auto-fit gap-6.25 justify-center">
+        <div className="w-full py-57.5 px-10 bg-no-repeat bg-center bg-cover text-white rounded-3xl flex flex-col justify-start">
+          <h3 className="text-2xl mb-2">Mudroots Pottery Studio</h3>
+          <p className="text-sm leading-relaxed">
             We designed a responsive minimal website and branding kit for a
             pottery studio.
           </p>
         </div>
 
-        <div className="idea-card">
-          <h3>Mudroots Pottery Studio</h3>
-          <p>
+        <div className="w-full py-57.5 px-10 bg-no-repeat bg-center bg-cover text-white rounded-3xl flex flex-col justify-start">
+          <h3 className="text-2xl mb-2">Mudroots Pottery Studio</h3>
+          <p className="text-sm leading-relaxed">
             We designed a responsive minimal website and branding kit for a
             pottery studio.
           </p>
@@ -24,7 +23,7 @@ function Portfolio() {
       </div>
 
       <Link to="/">
-        <button className="portfoliobtn black-bg-button">
+        <button className="black-bg-button block mx-auto mt-5">
           View Our Portfolio
         </button>
       </Link>

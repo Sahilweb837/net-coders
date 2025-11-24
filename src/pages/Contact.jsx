@@ -1,13 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import "../Style/style.css";
 import { Link, useNavigate } from "react-router-dom";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 
 function Contact() {
 
-  // aos initialize here
   Aos.init();
   const [open, setOpen] = useState(false);
   const form = useRef();
@@ -18,17 +16,13 @@ function Contact() {
   };
 
   const handleClose = () => {
-    // hide all form elements
     const allForms = document.querySelectorAll(".contact-wrapper");
     allForms.forEach((form) => {
       form.style.display = "none";
     });
 
-    // Navigate to contact form again
     navigate("/contact");
   };
-
-
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -49,7 +43,7 @@ function Contact() {
         }
       );
   };
-  // regular couses script
+
   useEffect(() => {
     const regularBtn = document.getElementById("regularBtn");
     const regularForm = document.getElementById("regularForm");
@@ -92,247 +86,252 @@ function Contact() {
   }, []);
 
   return (
-    <div className="contactcont container">
-      <div className="herosection container" data-aos="fade-up" data-aos-delay="150">
-        <span>Contact</span>
-        <h1>
-          We’d Love To Hear
+    <div className="container">
+      {/* Hero Section */}
+      <div className="flex flex-col items-center gap-5 mt-5 uppercase text-center py-7.5" data-aos="fade-up" data-aos-delay="150">
+        <span className="highlight-badge">Contact</span>
+        <h1 className="text-5xl font-bold">
+          We'd Love To Hear
           <br /> From You
         </h1>
-        <p>
-          Whether you’re looking to kickstart your learning journey or need
-          tailored IT solutions for your business, we’re just a message away.
-          Reach out with your queries, ideas, or collaboration requests. We’ll
+        <p className="w-10/12 text-dark-gray">
+          Whether you're looking to kickstart your learning journey or need
+          tailored IT solutions for your business, we're just a message away.
+          Reach out with your queries, ideas, or collaboration requests. We'll
           get back to you as soon as possible.
         </p>
       </div>
 
-      {/* ----------Query Section----- */}
-      <div className="querysection container" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-cubic" data-aos-delay="150">
-        <h2>Tell Us What You’re Looking For</h2>
-        <h3>Choose Your Area of Interest</h3>
-        <p>
+      {/* Query Section */}
+      <div className="bg-white rounded-5xl py-25 px-0 flex flex-col gap-10 items-center mt-12.5" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-cubic" data-aos-delay="150">
+        <h2 className="text-2xl font-bold">Tell Us What You're Looking For</h2>
+        <h3 className="text-xl font-semibold">Choose Your Area of Interest</h3>
+        <p className="w-11/12 text-center text-dark-gray">
           Select whether your inquiry is about our IT education programs or IT
           services. This helps us connect you with the right team quickly.
         </p>
 
-        <div className="query-btns">
-          <button onClick={handleClick}>Education</button>
+        <div className="flex flex-wrap gap-2.5 items-center justify-center">
+          <button onClick={handleClick} className="bg-white text-deep-black border border-deep-black px-15 py-2.5 rounded-2.5xl font-medium transition-all duration-300 hover:bg-deep-black hover:text-white">Education</button>
 
-          <button id="servicesBtn">Services</button>
+          <button id="servicesBtn" className="bg-white text-deep-black border border-deep-black px-15 py-2.5 rounded-2.5xl font-medium transition-all duration-300 hover:bg-deep-black hover:text-white">Services</button>
 
-
-          {/* Hidden Buttons */}
-          <div className={`edu-box ${open ? "show" : ""}`}>
-
-            <button id="regularBtn">Regular Courses</button>
-
-            <button id='industrialBtn'>Industrial Training</button>
+          <div className={`flex flex-col gap-2.5 ml-1.25 max-h-0 opacity-0 overflow-hidden transition-all duration-300 ${open ? 'max-h-50 opacity-100' : ''}`}>
+            <button id="regularBtn" className="bg-white text-deep-black border border-deep-black px-15 py-2.5 rounded-2.5xl font-medium transition-all duration-300 hover:bg-deep-black hover:text-white">Regular Courses</button>
+            <button id='industrialBtn' className="bg-white text-deep-black border border-deep-black px-15 py-2.5 rounded-2.5xl font-medium transition-all duration-300 hover:bg-deep-black hover:text-white">Industrial Training</button>
           </div>
         </div>
       </div>
 
-      {/* ----------Get in touch---------- */}
-      <div className="Headingtxt container">
-        <span>Get In Touch</span>
-        <h1>
+      {/* Get In Touch */}
+      <div className="flex flex-col items-center gap-5 py-5 text-center mt-10">
+        <span className="highlight-badge">Get In Touch</span>
+        <h1 className="text-4xl font-bold">
           Prefer to reach us <br />
           directly?
         </h1>
       </div>
 
-      <div className="main-contact">
-        <div className="contactinfo container" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
-          <div className="icon">
-            <i className="fa-solid fa-location-dot"></i>
-          </div>
-          <div className="location">
-            <h4>Office</h4>
-            <h5>Dharamshala, Himachal Pradesh</h5>
-            <p>
-              Near Govt. ITI, above Gramin Bank Dari, Dharamshala (176057)
-            </p>
-          </div>
-        </div>
-
-        <div className="contactinfo container"  data-aos="fade-left" data-aos-duration="900" data-aos-delay="300">
-          <div className="icon">
-            <i className="fa-solid fa-phone"></i>
-          </div>
-          <div className="location">
-            <h4>Phone</h4>
-            <h5>+91 9816732055, 7590832055</h5>
-            <p>Mon to Sat 10 am to 5 pm</p>
+      {/* Contact Info */}
+      <div className="flex flex-col gap-5">
+        <div className="flex flex-col mt-2.5 py-5 px-10 rounded-4xl gap-4.5 h-50 bg-white" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+          <div className="flex items-center gap-4.5">
+            <i className="fa-solid fa-location-dot text-dark-gray text-xl"></i>
+            <div>
+              <h4 className="font-bold text-deep-black">Office</h4>
+              <h5 className="font-semibold text-deep-black">Dharamshala, Himachal Pradesh</h5>
+              <p className="text-dark-gray">
+                Near Govt. ITI, above Gramin Bank Dari, Dharamshala (176057)
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="contactinfo container"  data-aos="fade-left" data-aos-duration="900" data-aos-delay="450">
-          <div className="icon" >
-            <i className="fa-solid fa-message"></i>
+        <div className="flex flex-col mt-2.5 py-5 px-10 rounded-4xl gap-4.5 h-50 bg-white" data-aos="fade-left" data-aos-duration="900" data-aos-delay="300">
+          <div className="flex items-center gap-4.5">
+            <i className="fa-solid fa-phone text-dark-gray text-xl"></i>
+            <div>
+              <h4 className="font-bold text-deep-black">Phone</h4>
+              <h5 className="font-semibold text-deep-black">+91 9816732055, 7590832055</h5>
+              <p className="text-dark-gray">Mon to Sat 10 am to 5 pm</p>
+            </div>
           </div>
-          <div className="location">
-            <h4>Chat to us</h4>
-            <h5>info@netcoder.in</h5>
-            <p>Send us your query anytime!</p>
+        </div>
+
+        <div className="flex flex-col mt-2.5 py-5 px-10 rounded-4xl gap-4.5 h-50 bg-white" data-aos="fade-left" data-aos-duration="900" data-aos-delay="450">
+          <div className="flex items-center gap-4.5">
+            <i className="fa-solid fa-message text-dark-gray text-xl"></i>
+            <div>
+              <h4 className="font-bold text-deep-black">Chat to us</h4>
+              <h5 className="font-semibold text-deep-black">info@netcoder.in</h5>
+              <p className="text-dark-gray">Send us your query anytime!</p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ---------- Regular Contact Form---------- */}
-      <div className="contact-wrapper container" id="regularForm">
-        <div className="close-btn" onClick={handleClose}>
-          <i className="fa-solid fa-arrow-left"></i>
+      {/* Regular Contact Form */}
+      <div className="hidden" id="regularForm">
+        <div className="flex justify-center items-center py-15 px-5 bg-white relative">
+          <div className="absolute top-5 left-6.25 cursor-pointer" onClick={handleClose}>
+            <i className="fa-solid fa-arrow-left text-deep-black text-xl"></i>
+          </div>
+
+          <form ref={form} onSubmit={sendEmail} className="w-full max-w-150 flex flex-col gap-5">
+            <label className="text-lg font-semibold">Your Name</label>
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Enter Your Name"
+              className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base placeholder-light-gray"
+              required
+            />
+
+            <label className="text-lg font-semibold">Mobile Number</label>
+            <input
+              type="text"
+              name="user_number"
+              placeholder="Enter Your Mobile Number"
+              className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base placeholder-light-gray"
+              required
+            />
+
+            <label className="text-lg font-semibold">Email Address</label>
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Enter Your Email"
+              className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base placeholder-light-gray"
+              required
+            />
+
+            <label className="text-lg font-semibold">Select A Course</label>
+            <select name="course" className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base text-light-gray">
+              <option value="" disabled selected>Select a course</option>
+              <option value="graphic-design">Graphic Design</option>
+              <option value="web-designing">Web Designing</option>
+              <option value="animation">2D/3D Animation</option>
+              <option value="ui-ux">UI/UX Design</option>
+              <option value="web-dev">Web Development</option>
+              <option value="wordpress">WordPress</option>
+              <option value="digital-marketing">Digital Marketing</option>
+              <option value="social-media">Social Media Marketing</option>
+              <option value="mern">Mern Stack</option>
+              <option value="autocad">Auto CAD</option>
+            </select>
+
+            <label className="text-lg font-semibold">Message</label>
+            <textarea
+              name="message"
+              placeholder="Write Us A Message"
+              className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base placeholder-light-gray"
+            ></textarea>
+
+            <button className="black-bg-button w-full text-base" type="submit">Submit</button>
+          </form>
         </div>
-
-        <form ref={form} onSubmit={sendEmail} className="contact-form">
-          <label>Your Name</label>
-          <input
-            type="text"
-            name="user_name"
-            placeholder="Enter Your Name"
-            required
-          />
-
-          <label>Mobile Number</label>
-          <input
-            type="text"
-            name="user_number"
-            placeholder="Enter Your Mobile Number"
-            required
-          />
-
-          <label>Email Address</label>
-          <input
-            type="email"
-            name="user_email"
-            placeholder="Enter Your Email"
-            required
-          />
-
-          <label for="course">Select A Course</label>
-          <select name="course" id="course">
-            <option value="" disabled selected>Select a course</option>
-            <option value="graphic-design">Graphic Design</option>
-            <option value="graphic-design">Web Designing</option>
-            <option value="graphic-design">2D/3D Animation</option>
-            <option value="graphic-design"></option>
-
-            <option value="ui-ux">UI/UX Design</option>
-            <option value="web-dev">Web Development</option>
-            <option value="wordpress">WordPress</option>
-            <option value="digital-marketing">Digital Marketing</option>
-            <option value="social-media">Social Media Marketing</option>
-            <option value="social-media">Mern Stack</option>
-            <option value="social-media">Auto CAD</option>
-
-
-          </select>
-
-          <label>Message</label>
-          <textarea
-            name="message"
-            placeholder="Write Us A Message"
-          ></textarea>
-
-          <button className="black-bg-button" type="submit">Submit</button>
-        </form>
       </div>
 
-      {/* ---------- Industrial Traning Contact Form---------- */}
-      <div className="contact-wrapper container" id="industrialForm">
-        <div className="close-btn" onClick={handleClose}>
-          <i className="fa-solid fa-arrow-left"></i>
+      {/* Industrial Training Contact Form */}
+      <div className="hidden" id="industrialForm">
+        <div className="flex justify-center items-center py-15 px-5 bg-white relative">
+          <div className="absolute top-5 left-6.25 cursor-pointer" onClick={handleClose}>
+            <i className="fa-solid fa-arrow-left text-deep-black text-xl"></i>
+          </div>
+
+          <form ref={form} onSubmit={sendEmail} className="w-full max-w-150 flex flex-col gap-5">
+            <label className="text-lg font-semibold">Your Name</label>
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Enter Your Name"
+              className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base placeholder-light-gray"
+              required
+            />
+
+            <label className="text-lg font-semibold">Mobile Number</label>
+            <input
+              type="text"
+              name="user_number"
+              placeholder="Enter Your Mobile Number"
+              className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base placeholder-light-gray"
+              required
+            />
+
+            <label className="text-lg font-semibold">Email Address</label>
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Enter Your Email"
+              className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base placeholder-light-gray"
+              required
+            />
+            <label className="text-lg font-semibold">Select A Course</label>
+            <select name="course" className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base text-light-gray">
+              <option value="" disabled selected>Select a course</option>
+              <option value="graphic-design">Graphic Design</option>
+              <option value="ui-ux">UI/UX Design</option>
+              <option value="web-dev">Web Development</option>
+              <option value="wordpress">WordPress</option>
+              <option value="digital-marketing">Digital Marketing</option>
+              <option value="social-media">Social Media Marketing</option>
+            </select>
+
+            <label className="text-lg font-semibold">Duration</label>
+            <select name="Duration" className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base text-light-gray">
+              <option value="" disabled selected>45 Days</option>
+              <option value="6-months">6 Months</option>
+              <option value="3-years">3 Years</option>
+            </select>
+
+            <button className="black-bg-button w-full text-base" type="submit">Submit</button>
+          </form>
         </div>
-
-        <form ref={form} onSubmit={sendEmail} className="contact-form">
-          <label>Your Name</label>
-          <input
-            type="text"
-            name="user_name"
-            placeholder="Enter Your Name"
-            required
-          />
-
-          <label>Mobile Number</label>
-          <input
-            type="text"
-            name="user_number"
-            placeholder="Enter Your Mobile Number"
-            required
-          />
-
-          <label>Email Address</label>
-          <input
-            type="email"
-            name="user_email"
-            placeholder="Enter Your Email"
-            required
-          />
-          <label for="course">Select A Course</label>
-          <select name="course" id="course">
-            <option value="" disabled selected>Select a course</option>
-            <option value="graphic-design">Graphic Design</option>
-            <option value="ui-ux">UI/UX Design</option>
-            <option value="web-dev">Web Development</option>
-            <option value="wordpress">WordPress</option>
-            <option value="digital-marketing">Digital Marketing</option>
-            <option value="social-media">Social Media Marketing</option>
-          </select>
-
-          <label for="Duration">Duration</label>
-          <select name="Duration" id="Duration">
-            <option value="" disabled selected>45 Days</option>
-            <option value="6 Month">6 Months</option>
-            <option value="6 Month">6 Month</option>
-            <option value="3 Years">3 Years</option>
-          </select>
-
-
-
-
-          <button className="black-bg-button" type="submit">Submit</button>
-        </form>
       </div>
 
-      {/* ---------- Services Traning Contact Form---------- */}
-      <div className="contact-wrapper container" id="servicesform">
-        <div className="close-btn" onClick={handleClose}>
-          <i className="fa-solid fa-arrow-left"></i>
+      {/* Services Contact Form */}
+      <div className="hidden" id="servicesform">
+        <div className="flex justify-center items-center py-15 px-5 bg-white relative">
+          <div className="absolute top-5 left-6.25 cursor-pointer" onClick={handleClose}>
+            <i className="fa-solid fa-arrow-left text-deep-black text-xl"></i>
+          </div>
+
+          <form ref={form} onSubmit={sendEmail} className="w-full max-w-150 flex flex-col gap-5">
+            <label className="text-lg font-semibold">Your Name</label>
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Enter Your Name"
+              className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base placeholder-light-gray"
+              required
+            />
+
+            <label className="text-lg font-semibold">Mobile Number</label>
+            <input
+              type="text"
+              name="user_number"
+              placeholder="Enter Your Mobile Number"
+              className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base placeholder-light-gray"
+              required
+            />
+
+            <label className="text-lg font-semibold">Email Address</label>
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Enter Your Email"
+              className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base placeholder-light-gray"
+              required
+            />
+
+            <label className="text-lg font-semibold">What Brings You Here Today</label>
+            <select name="course" className="w-full py-3.5 px-4 border border-light-gray rounded-sm text-base text-light-gray">
+              <option value="" disabled selected>Needs A Social Manager</option>
+            </select>
+
+            <button className="black-bg-button w-full text-base" type="submit">Submit</button>
+          </form>
         </div>
-
-        <form ref={form} onSubmit={sendEmail} className="contact-form">
-          <label>Your Name</label>
-          <input
-            type="text"
-            name="user_name"
-            placeholder="Enter Your Name"
-            required
-          />
-
-          <label>Mobile Number</label>
-          <input
-            type="text"
-            name="user_number"
-            placeholder="Enter Your Mobile Number"
-            required
-          />
-
-          <label>Email Address</label>
-          <input
-            type="email"
-            name="user_email"
-            placeholder="Enter Your Email"
-            required
-          />
-
-          <label>What Brings You Here Today</label>
-          <select name="course" id="course">
-            <option value="" disabled selected>Needs A Social Manager</option>
-
-          </select>
-
-          <button className="black-bg-button" type="submit">Submit</button>
-        </form>
       </div>
     </div>
   );

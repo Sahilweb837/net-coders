@@ -1,4 +1,3 @@
-
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -12,9 +11,9 @@ import Singlecourse from "./pages/Singlecourse";
 // import Contactform from "./pages/Contactform";
 function App() {
   return (
-    <div className="app">
+    <div className="">
       <Navbar />
-      <main className="main-content">
+      <main className="flex-1 py-5">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
