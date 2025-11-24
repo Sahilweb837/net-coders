@@ -89,6 +89,7 @@ export default {
         'xl': '1280px',
       },
       minWidth: {
+        '45': '180px',
         '50': '200px',
         '75': '300px',
       },
@@ -100,6 +101,25 @@ export default {
       },
       lineHeight: {
         '30': '30px',
+      },
+      flex: {
+        '2/5': '0 0 40%',
+        '3/5': '0 0 60%',
+      },
+      gap: {
+        '45': '180px',
+      },
+      borderRadius: {
+        '45': '18px',
+        '50': '20px',
+        '80': '80px',
+        '22': '22px',
+        '35': '35px',
+        '40': '40px',
+      },
+      gridTemplateColumns: {
+        'blogcard': '590px 397px',
+        'blogcard-reverse': '397px 590px',
       },
     },
   },
