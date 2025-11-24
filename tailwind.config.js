@@ -69,6 +69,8 @@ export default {
       },
       gridTemplateColumns: {
         'auto-fit': 'repeat(auto-fit, minmax(280px, 1fr))',
+        'blogcard': '590px 397px',
+        'blogcard-reverse': '397px 590px',
       },
       animation: {
         'spin-slow': 'spin 20s linear infinite',
