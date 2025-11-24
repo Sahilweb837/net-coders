@@ -1,74 +1,63 @@
 import React from "react";
-// import logo from "../assets/Images/logo.png";
 import { Link } from "react-router-dom";
+
 function Footer() {
   return (
-    <footer className="footer">
-  
+    <footer className="flex flex-wrap justify-between items-start gap-7.5 px-25 py-10 text-center w-4/5 mx-auto capitalize">
       {/* Box 1: Quick links */}
-      <div className="footer-box">
-        <h6>Quick Links</h6>
-        <div className="footer-links">
-          <Link to="/" className="footer-link">Home</Link>
-          <Link to="/about" className="footer-link">About us</Link>
-          <Link to="/Blogs" className="footer-link">Blog</Link>
-          <Link to="/contact" className="footer-link">Contact</Link>
-
+      <div className="flex-1 min-w-50">
+        <h6 className="text-lg font-bold mb-6.25 text-deep-black">Quick Links</h6>
+        <div className="flex flex-col gap-4.5">
+          <Link to="/" className="text-dark-gray no-underline text-base transition-all duration-300">Home</Link>
+          <Link to="/about" className="text-dark-gray no-underline text-base transition-all duration-300">About us</Link>
+          <Link to="/Blogs" className="text-dark-gray no-underline text-base transition-all duration-300">Blog</Link>
+          <Link to="/contact" className="text-dark-gray no-underline text-base transition-all duration-300">Contact</Link>
         </div>
       </div>
 
       {/* Box 2: Features */}
-      <div className="footer-box">
-        <h6>Features</h6>
-        <div className="footer-links">
-          <Link to="/Singlecourse" className="footer-link">Coueses</Link>
-          <Link to="/" className="footer-link">Industrial Training</Link>
-          <Link to="/" className="footer-link">Insights</Link>
-          <Link to="/" className="footer-link">IT Solutions</Link>
+      <div className="flex-1 min-w-50">
+        <h6 className="text-lg font-bold mb-6.25 text-deep-black">Features</h6>
+        <div className="flex flex-col gap-4.5">
+          <Link to="/Singlecourse" className="text-dark-gray no-underline text-base transition-all duration-300">Courses</Link>
+          <Link to="/" className="text-dark-gray no-underline text-base transition-all duration-300">Industrial Training</Link>
+          <Link to="/" className="text-dark-gray no-underline text-base transition-all duration-300">Insights</Link>
+          <Link to="/" className="text-dark-gray no-underline text-base transition-all duration-300">IT Solutions</Link>
         </div>
       </div>
 
       {/* Box 3: Legal Info */}
-      <div className="footer-box">
-        <h6>Legal Links</h6>
-        <div className="footer-links">
-          <Link to="/" className="footer-link"> term & conditions</Link>
-          <Link to="/" className="footer-link">Privacy Policy</Link>
+      <div className="flex-1 min-w-50">
+        <h6 className="text-lg font-bold mb-6.25 text-deep-black">Legal Links</h6>
+        <div className="flex flex-col gap-4.5">
+          <Link to="/" className="text-dark-gray no-underline text-base transition-all duration-300">Term & Conditions</Link>
+          <Link to="/" className="text-dark-gray no-underline text-base transition-all duration-300">Privacy Policy</Link>
         </div>
       </div>
 
-        {/* Box 4: stay connected */}
-      <div className="footer-box">
-        <h6>Stay connect</h6>
-        <div className="footer-links">
-      <div className="social-media">
-
-       {/* Facebook */}
-<a href="https://www.facebook.com/netcodertechnology" target="_blank" rel="noopener noreferrer">
-  <i className="fa-brands fa-facebook-f"></i>
-</a>
-
-{/* Instagram */}
-<a href="https://www.instagram.com/netcodertechnology" target="_blank" rel="noopener noreferrer">
-  <i className="fa-brands fa-instagram"></i>
-</a>
-
-{/* YouTube */}
-<a href="https://www.youtube.com/@netcodertechnology" target="_blank" rel="noopener noreferrer">
-  <i className="fa-brands fa-youtube"></i>
-</a>
-
-{/* LinkedIn */}
-<a href="https://www.linkedin.com/in/netcodertechnology" target="_blank" rel="noopener noreferrer">
-  <i className="fa-brands fa-linkedin-in"></i>
-</a>
-
-      </div>
+      {/* Box 4: Stay connected */}
+      <div className="flex-1 min-w-50">
+        <h6 className="text-lg font-bold mb-6.25 text-deep-black">Stay Connect</h6>
+        <div className="flex flex-col gap-4.5">
+          <div className="social-media flex gap-5">
+            <a href="https://www.facebook.com/netcodertechnology" target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-facebook-f text-dark-gray text-xl"></i>
+            </a>
+            <a href="https://www.instagram.com/netcodertechnology" target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-instagram text-dark-gray text-xl"></i>
+            </a>
+            <a href="https://www.youtube.com/@netcodertechnology" target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-youtube text-dark-gray text-xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/netcodertechnology" target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-linkedin-in text-dark-gray text-xl"></i>
+            </a>
+          </div>
         </div>
       </div>
 
       {/* Copyright */}
-      <div className="copywrite">
+      <div className="w-full text-center pt-5 mt-20 text-base text-deep-black">
         <p>*All the rights are reserved by <strong>Netcoder Technology</strong></p>
       </div>
     </footer>
